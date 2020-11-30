@@ -12,7 +12,7 @@ import axios from './axios';
 function Payment() {
     const [{ basket, user, }, dispatch] = useStateValue();
     const history = useHistory();
-    
+
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
     const [ error, setError] = useState(null);
@@ -31,6 +31,8 @@ function Payment() {
 
         getClientSecret();
     }, [basket])
+
+    console.log('The Secret >>>', clientSecret)
 
     const stripe = useStripe();
     const elements = useElements();
