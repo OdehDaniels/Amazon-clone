@@ -1,11 +1,11 @@
-import React, { useState, UseEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Orders.css';
+import Order from './Order.js'
 import { db } from "./firebase";
-import { useState } from 'react';
 import { useStateValue } from './StateProvider';
 
 function Orders() {
-    const [{ basket, user }, dispatch] = useStateValue;
+    const [{ basket, user }, dispatch] = useStateValue();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         if (user) {
@@ -29,6 +29,11 @@ function Orders() {
     return (
         <div className='orders'>
             <h1>Your Orders</h1>
+            <div className="orders__order">
+                {orders?.map(order => (
+                    <Order order={order} />
+                ))}
+            </div>
         </div>
     )
 }
