@@ -72,7 +72,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
     firebase login
     firebase init
     npm run build
-    firebase deploy
+    firebase deploy (Cloud Function)
+    firebase deploy --only hosting
 
 ### Firebase Emulator
     firebase emulators:start
+### Firebase deploy Function - Blaze Plan
+    firebase deploy --only functions
